@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>identify symptoms of Corona</title>
+   </head>
+   <body bgcolor="aqua">
+  
+<div id="menu-1">
+    <h3>Covid-19 Self Detector</h3>
+    <p>If you want to detect, whether you were infected by covid-19 or not, you are at the right place. Just answer the questions and find whether you are safe.</p >
+   <span id="image"> <img src=" https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwOnOP91nfngCD_tdJVVoL5K-YWBGON3f7Uf5hvq6cQcHWAIa5&usqp=CAU " width="400px" height="400px" style:"border-color="green",border="5"> </image>
+    <p>Lets break the chain by being seperated and virtually connected </p>
+    <input type="button" name="" value="Click here to start" id="start" align="center" onclick="one()" class="button">
+     </br>
+</div>
+<div id="menu-2" >
+    <form name="quiz">
+    <div class="question">
+        <p>1. Do you have headache?</p >
+    <input type="radio" name="question1" value="Yes" class="button">Yes
+    <input type="radio" name="question1" value="No" class="button">No
+    </div>
+
+    <div class="question" >
+    <p>2. Do you have fever which is higher than 37.5 degree?</p >
+    <input type="radio" name="question2" value="Yes" class="button">Yes
+    <input type="radio" name="question2" value="No" class="button">No
+    </div>
+
+    <div class="question"  >
+    <p>3. Did you find it hard to breath?</p >
+    <input type="radio" name="question3" value="Yes" class="button">Yes
+    <input type="radio" name="question3" value="No" class="button">No
+    </div> 
+
+    <div class="question"  >
+    <p>4. Are you often feeling tired even if you do nothing?</p >
+    <input type="radio" name="question4" value="Yes" class="button">Yes
+    <input type="radio" name="question4" value="No" class="button">No
+    </div>
+
+    <div class="question" >
+    <p>5. Are you feeling some muscle pains?</p >
+    <input type="radio" name="question5" value="Yes" class="button">Yes
+    <input type="radio" name="question5" value="No" class="button">No
+    </div>
+
+    <div class="question"  >
+    <p>6. Do you cough?</p >
+    <input type="radio" name="question6" value="Yes" class="button">Yes
+    <input type="radio" name="question6" value="No" class="button">No
+    </div>
+  <div class="question">
+    <p>7. Do you have sore throat?</p >
+    <input type="radio" name="question7" value="Yes" class="button">Yes
+    <input type="radio" name="question7" value="No" class="button">No
+    </div>
+       <div class="question">
+    <p>8. Do you smoke?</p >
+    <input type="radio" name="question8" value="Yes" class="button">Yes
+    <input type="radio" name="question8" value="No" class="button">No
+    </div>
+       <div class="question">
+    <p>9. Are you a foreign return?</p >
+    <input type="radio" name="question9" value="Yes" class="button">Yes
+    <input type="radio" name="question9" value="No" class="button">No
+    </div>
+      <div class="question">
+    <p>10. Some patients experience loss of taste or smell.Do you experience any?</p >
+    <input type="radio" name="question10" value="Yes" class="button">Yes
+    <input type="radio" name="question10" value="No" class="button">No
+    </div>
+        <div class="question">
+    <p>11. Age is also a risk for corona-virus.Are you above 60?</p >
+    <input type="radio" name="question11" value="Yes" class="button">Yes
+      <input type="radio" name="question11" value="No" class="button">No
+    </div> 
+       
+       </br>
+    <input type="button" name="" value="Submit the answers" onclick="check()" class="button">
+    
+    </form>
+    
+</div>
+ <div id="menu-3">
+<p id="text">
+</p>
+ </br> 
+    <input type="button" name="" value="Awareness tips"  onclick="aware()" class="button"> 
+  
+ </div>
+
+<script type="text/javascript">
+    
+    function one() {
+    var menu1=document.getElementById('menu-1');
+    var menu2=document.getElementById("menu-2");
+    menu1.style.display="none";
+    menu2.style.display="block"
+};
+function check() {
+    var c=0;
+  var question1=document.quiz.question1.value;
+  var question2=document.quiz.question2.value;
+  var question3=document.quiz.question3.value;
+  var question4=document.quiz.question4.value;
+  var question5=document.quiz.question5.value;
+  var question6=document.quiz.question6.value;
+  var question7=document.quiz.question7.value;
+  var question8=document.quiz.question8.value;
+  var question9=document.quiz.question9.value;
+  var question10=document.quiz.question10.value;
+  var question11=document.quiz.question11.value;
+  var text=document.getElementById('text');
+  var menu2=document.getElementById('menu-2');
+  var menu3=document.getElementById('menu-3');
+  var awar=document.getElementById('awar');
+
+        if (question1=="Yes") {
+            c++; 
+        };
+        if (question2=="Yes") {
+            c++;
+        };
+        if (question3=="Yes") {
+            c++;
+        };
+        if (question4=="Yes") {
+            c++;
+        };
+        if (question5=="Yes") {
+            c++;
+        };
+        if (question6=="Yes") {
+            c++;
+        };
+        if (question7=="Yes") {
+            c++; 
+        }; 
+        if (question8=="Yes") {
+            c++; 
+        }; 
+        if (question9=="Yes") {
+            c++; 
+        }; 
+        if (question10=="Yes") {
+            c++; 
+        }; 
+        if (question11=="Yes") {
+            c++; 
+        }; 
+   
+        
+        menu2.style.display="none";
+        menu3.style.display="block";
+    
+        if(c==0)
+        {
+        text.innerHTML="<h2>Results</h2> <hr>Don't worry .You are experiencing "+ c+ "  out of 12 Coronavirus symptoms.<hr>"
+        }
+        else if(c<=4)
+        {text.innerHTML='<h2> Results</h2><hr>Great to see you!!! <hr> You are experiencing '+ c+ "  of Coronavirus symptoms. <hr>You may not have many symptoms but pay more attention to you and your family member's health. Call the doctor if you need any help. <hr>"
+        }
+        else if(c<=6)
+        {
+            text.innerHTML=' <h2>Results</h2><hr>Hello my friend!! You are in severe condition;consult a doctor immediately.<hr>And You are experiencing '+ c+ "  out of 12 Coronavirus symptoms"}
+        else if(c<=10)
+        {text.innerHTML="<h2>Results</h2><hr>Hello my friend!! You are in danger zone,so please consult the nearby doctor and diagnose yourself. <hr> You are experiencing "+ c+ "  of Coronavirus symptoms."
+        }
+        
+      
+
+}; 
+   
+ function aware() {
+  var menu3=document.getElementById('menu3');
+  var awar=document.getElementById('awar');
+  
+         document.write("<b><h3>Plan to avoid virus,Make sure you have:</b></h3><hr> ")
+document.write(" <h1>1. Enough food, especially healthy carbs like whole-wheat crackers, vegetable or noodle soups, and unsweetened applesauce </h1>  ");
+
+
+document.write(" <h4>2. Simple carbs like honey, sugar-sweetened soda, fruit juice, or hard candies in case your blood sugar dips.</h4> ");
+
+
+document.write("<h4> 3. The maximum number of refills you can get of your insulin and other medications.</h4>");
+
+document.write("<h4> 4. Extra glucagon and ketone strips.  <hr></h4>");
+document.write("<b>For any COVID 19 related queries, call your State Helpline/Ministry of Health & Family Welfare's 24X7 helpline at 1075 or 011-23978046.<hr> </b>");
+ 
+}
+ 
+</script>
+</dop>
+<style type="text/css">
+    body {
+    background-color:aqua;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+
+}
+
+.button {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 8px blue;
+    margin-right: 15px;
+}
+
+#start {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    text-align: center;
+    box-shadow: 5px 5px 8px blue;
+}
+#menu-2 {
+    display: none;
+}
+
+.question {
+    background-color:pink;
+    box-shadow: 10px 10px 15px pink;
+    margin: 0.5em;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+}
+
+#menu-3 {
+    display: none;
+}
+#awar{
+bottom:0px;
+background-color:aqua; 
+ 
+}
+
+#awar{
+  
+    background-color:;
+    font-family: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bolder;
+}
+    
+</style>
+</body>
+</html>
+    
